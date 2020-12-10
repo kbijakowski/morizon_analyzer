@@ -1,0 +1,222 @@
+influx:
+    host: "127.0.0.1"
+    port: 8086
+    database: "db0"
+queries:
+    - city: "krakow"
+    - city: "katowice"
+    - city: "opole"
+    - city: "wroclaw"
+    - city: "poznan"
+    - city: "zielona-gora"
+    - city: "gorzow-wielkopolski"
+    - city: "szczecin"
+    - city: "gdansk"
+    - city: "bydgoszcz"
+    - city: "torun"
+    - city: "lodz"
+    - city: "warszawa"
+    - city: "olsztyn"
+    - city: "bialystok"
+    - city: "lublin"
+    - city: "rzeszow"
+    - city: "kielce"
+    - city: "gdynia"
+    - city: "gliwice"
+    - city: "wolbrom"
+    - city: "olkusz"
+    - city: "miechow"
+    # 
+    - city: "krakow"
+      filter_date_filter: 7
+    - city: "katowice"
+      filter_date_filter: 7
+    - city: "opole"
+      filter_date_filter: 7
+    - city: "wroclaw"
+      filter_date_filter: 7
+    - city: "poznan"
+      filter_date_filter: 7
+    - city: "zielona-gora"
+      filter_date_filter: 7
+    - city: "gorzow-wielkopolski"
+      filter_date_filter: 7
+    - city: "szczecin"
+      filter_date_filter: 7
+    - city: "gdansk"
+      filter_date_filter: 7
+    - city: "bydgoszcz"
+      filter_date_filter: 7
+    - city: "torun"
+      filter_date_filter: 7
+    - city: "lodz"
+      filter_date_filter: 7
+    - city: "warszawa"
+      filter_date_filter: 7
+    - city: "olsztyn"
+      filter_date_filter: 7
+    - city: "bialystok"
+      filter_date_filter: 7
+    - city: "lublin"
+      filter_date_filter: 7
+    - city: "rzeszow"
+      filter_date_filter: 7
+    - city: "kielce"
+      filter_date_filter: 7
+    - city: "gdynia"
+      filter_date_filter: 7
+    - city: "gliwice"
+      filter_date_filter: 7
+    #
+    - city: "krakow"
+      filter_dict_building_type: 247
+    - city: "krakow"
+      district: "podgorze"
+    - city: "krakow"
+      district: "krowodrza"
+    - city: "krakow"
+      district: "stare-miasto"
+    - city: "krakow"
+      district: "pradnik-bialy"
+    - city: "krakow"
+      district: "grzegorzki"
+    - city: "krakow"
+      district: "debniki"
+    - city: "krakow"
+      district: "biezanow-prokocim"
+    - city: "krakow"
+      district: "mistrzejowice"
+    - city: "krakow"
+      district: "pradnik-czerwony"
+    - city: "krakow"
+      district: "czyzyny"
+    - city: "krakow"
+      district: "podgorze"
+    - city: "krakow"
+      district: "bronowice"
+    - city: "krakow"
+      district: "podgorze-duchackie"
+    - city: "krakow"
+      district: "nowa-huta"
+    # 
+    - city: "krakow"
+      filter_dict_building_type: 247
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "podgorze"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "krowodrza"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "stare-miasto"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "pradnik-bialy"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "grzegorzki"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "debniki"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "biezanow-prokocim"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "mistrzejowice"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "pradnik-czerwony"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "czyzyny"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "podgorze"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "bronowice"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "podgorze-duchackie"
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "nowa-huta"
+      
+    #
+    - city: "krakow"
+      filter_dict_building_type: 247
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "podgorze"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "krowodrza"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "stare-miasto"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "pradnik-bialy"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "grzegorzki"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "debniki"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "biezanow-prokocim"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "mistrzejowice"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "pradnik-czerwony"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "czyzyny"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "podgorze"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "bronowice"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "podgorze-duchackie"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
+    - city: "krakow"
+      district: "nowa-huta"
+      filter_living_area_from: 45
+      filter_number_of_rooms_from: 2
+      filter_date_filter: 7
