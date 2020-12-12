@@ -2,6 +2,7 @@ import logging
 import time
 
 import requests
+from requests.auth import HTTPBasicAuth
 
 LOGGER = logging.getLogger(__name__)
 
@@ -15,12 +16,21 @@ class InfluxDBPublisher(object):
         host,
         database,
         port=8086,
+        user=None,
+        password=None,
         tags=None,
         precision=DEFAULT_INFLUX_PRECISION
     ):
         self._host = host
         self._port = port
         self._database = database
+        self._user = user
+        self._password = password
+
+        self._auth = None
+        if self._user and self._password:
+            self._auth = HTTPBasicAuth(self._user, self._password)
+
         self._tags = tags or ""
         self._precision = precision
 
@@ -65,7 +75,11 @@ class InfluxDBPublisher(object):
         )
         LOGGER.debug(f"InfluxDB query payload: '{payload}'")
 
-        response = requests.post(self.write_url, payload.encode())
+        response = requests.post(
+            self.write_url, payload.encode(),
+            auth=self._auth
+        )
+
         if response.ok:
             LOGGER.debug(
                 "Influx DB publication succeeded for "
