@@ -34,13 +34,11 @@ class Result:
     def influxdb_tags(self):
         result = {
             "city": self.city,
+            "district": self.district or "null"
         }
 
-        if self.district:
-            result["district"] = self.district
-
         for filter_name, filter_value in self.filters.items():
-            result[filter_name] = filter_value
+            result[filter_name] = filter_value if filter_value else "null"
 
         return result
 
@@ -121,7 +119,7 @@ class Morizon:
         self.main_url = main_url
         self.offer_type = offer_type
 
-        self.filters = {
+        self.all_filters = {
             "price_from": filter_price_from,
             "living_area_from": filter_living_area_from,
             "number_of_rooms_from": filter_number_of_rooms_from,
@@ -132,7 +130,7 @@ class Morizon:
         }
         self.filters = {
             filter_name: filter_value
-            for filter_name, filter_value in self.filters.items()
+            for filter_name, filter_value in self.all_filters.items()
             if filter_value
         }
 
@@ -168,7 +166,7 @@ class Morizon:
             self.city,
             self.district,
             self.offer_type,
-            self.filters,
+            self.all_filters,
             average_price,
             average_price_per_squared_meter,
             offers_amount,
