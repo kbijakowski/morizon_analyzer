@@ -1,5 +1,6 @@
 import logging
 import time
+from typing import Any, Dict, Optional
 
 import requests
 from requests.auth import HTTPBasicAuth
@@ -13,13 +14,13 @@ class InfluxDBPublisher(object):
 
     def __init__(
         self,
-        host,
-        database,
-        port=8086,
-        user=None,
-        password=None,
-        tags=None,
-        precision=DEFAULT_INFLUX_PRECISION
+        host: str,
+        database: str,
+        port: Optional[int] = 8086,
+        user: Optional[str] = None,
+        password: Optional[str] = None,
+        tags: Optional[Dict[str, Any]] = None,
+        precision: Optional[str] = DEFAULT_INFLUX_PRECISION
     ):
         self._host = host
         self._port = port
@@ -35,7 +36,7 @@ class InfluxDBPublisher(object):
         self._precision = precision
 
     @property
-    def write_url(self):
+    def write_url(self) -> str:
         if not self._host or not self._port or not self._database:
             return None
 
@@ -46,12 +47,12 @@ class InfluxDBPublisher(object):
 
     def publish(
         self,
-        measurement,
-        field_name,
-        value,
-        timestamp=None,
-        tags=None
-    ):
+        measurement: str,
+        field_name: str,
+        value: int,
+        timestamp: Optional[str] = None,
+        tags: Optional[Dict[str, Any]] = None
+    ) -> None:
         if not self.write_url or not field_name:
             LOGGER.warning(
                 "Cannot publish results to InfluxDB - "
@@ -91,7 +92,10 @@ class InfluxDBPublisher(object):
                 f"{measurement}.{field_name}={value}"
             )
 
-    def _prepare_tags(self, additional_tags=None):
+    def _prepare_tags(
+        self,
+        additional_tags: Optional[Dict[str, str]] = None
+    ) -> str:
         additional_tags = additional_tags or {}
         additional_tags_str = ",".join(
             f"{tag_name}={tag_value}"

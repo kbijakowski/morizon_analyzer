@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 import requests
 from bs4 import BeautifulSoup
@@ -7,15 +8,16 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Result:
+
     def __init__(
         self,
-        city,
-        district,
-        offer_type,
-        filters,
-        average_price,
-        average_price_per_squared_meter,
-        offers_amount,
+        city: str,
+        district: str,
+        offer_type: str,
+        filters: Dict[str, Any],
+        average_price: float,
+        average_price_per_squared_meter: float,
+        offers_amount: int,
     ):
         self.city = city
         self.district = district
@@ -26,12 +28,12 @@ class Result:
         self.average_price_per_squared_meter = average_price_per_squared_meter
         self.offers_amount = offers_amount
 
-    def dump(self):
+    def dump(self) -> str:
         district = f" [{self.district}]" if self.district else ""
         return f"{self.offer_type} {self.city}{district}: {self.average_price} zł ({self.average_price_per_squared_meter} zł/m2) [{self.offers_amount}]"  # noqa: E501
 
     @property
-    def influxdb_tags(self):
+    def influxdb_tags(self) -> Dict[str, Union[str, int]]:
         result = {
             "city": self.city,
             "district": self.district or "null"
@@ -43,7 +45,7 @@ class Result:
         return result
 
     @property
-    def influxdb_measurement_average_price(self):
+    def influxdb_measurement_average_price(self) -> Dict[str, Any]:
         return {
             "measurement": self.offer_type,
             "field_name": "average_price",
@@ -52,7 +54,9 @@ class Result:
         }
 
     @property
-    def influxdb_measurement_average_price_per_squared_meter(self):
+    def influxdb_measurement_average_price_per_squared_meter(
+        self
+    ) -> Dict[str, Any]:
         return {
             "measurement": self.offer_type,
             "field_name": "average_price_per_squared_meter",
@@ -61,7 +65,7 @@ class Result:
         }
 
     @property
-    def influxdb_measurement_offers_amount(self):
+    def influxdb_measurement_offers_amount(self) -> Dict[str, Any]:
         return {
             "measurement": self.offer_type,
             "field_name": "offers_amount",
@@ -79,7 +83,7 @@ class Morizon:
     DEFAULT_OFFER_TYPE = "mieszkania"
 
     @staticmethod
-    def _to_int(value):
+    def _to_int(value: str) -> int:
         try:
             return int(
                 "".join(
@@ -91,17 +95,17 @@ class Morizon:
 
     def __init__(
         self,
-        city,
-        district=None,
-        main_url=DEFAULT_MAIN_URL,
-        offer_type=DEFAULT_OFFER_TYPE,
-        filter_living_area_from=None,
-        filter_number_of_rooms_from=None,
-        filter_floor_from=None,
-        filter_price_from=None,
-        filter_dict_building_type=None,
-        filter_date_filter=None,
-        filter_with_price=None,
+        city: str,
+        district: Optional[str] = None,
+        main_url: Optional[str] = DEFAULT_MAIN_URL,
+        offer_type: Optional[str] = DEFAULT_OFFER_TYPE,
+        filter_living_area_from: Optional[float] = None,
+        filter_number_of_rooms_from: Optional[int] = None,
+        filter_floor_from: Optional[int] = None,
+        filter_price_from: Optional[float] = None,
+        filter_dict_building_type: Optional[int] = None,
+        filter_date_filter: Optional[int] = None,
+        filter_with_price: Optional[int] = None,
     ):
         """
         :param `filter_living_area_from`: space in squared meters
@@ -135,7 +139,7 @@ class Morizon:
         }
 
     @property
-    def url(self):
+    def url(self) -> str:
         district = f"/{self.district}" if self.district else ""
         filters_rendered = "&".join(
             [
@@ -147,7 +151,7 @@ class Morizon:
 
         return f"{self.main_url}/{self.offer_type}/{self.city}{district}/?{filters_rendered}"  # noqa: E501
 
-    def read(self):
+    def read(self) -> Result:
         markup = BeautifulSoup(self._get_webpage_content(), "html.parser")
 
         links = markup.find_all("a", {"id": "locationPageLink"})
@@ -172,7 +176,7 @@ class Morizon:
             offers_amount,
         )
 
-    def _get_webpage_content(self):
+    def _get_webpage_content(self) -> Optional[str]:
         LOGGER.debug(f"GET {self.url}")
         response = requests.get(self.url)
 
@@ -186,7 +190,7 @@ class Morizon:
 
         return response.content
 
-    def _parse_links(self, links):
+    def _parse_links(self, links: List[str]) -> Tuple[int, int]:
         if len(links) == 0:
             return (0, 0)
 
@@ -202,7 +206,10 @@ class Morizon:
 
             return average_price, average_price_per_squared_meter
 
-    def _parse_listing_header_description(self, listing_header_description):
+    def _parse_listing_header_description(
+        self,
+        listing_header_description: str
+    ) -> int:
         assert listing_header_description
         listing_header_description_p_tag = listing_header_description.pop()
 

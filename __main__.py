@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import sys
+from typing import Any, Dict, Optional
 
 import yaml
 
@@ -33,16 +34,18 @@ ENV_VARIBLE_INFLUXDB_USER = "INFLUXDB_USER"
 ENV_VARIBLE_INFLUXDB_PASSWORD = "INFLUXDB_PASSWORD"
 
 
-def get_config_file_path():
+def get_config_file_path() -> str:
     return os.getenv(ENV_VARIBLE_CONFIG_FILE_PATH, DEFAULT_CONFIG_FILE_PATH)
 
 
-def parse_config_yaml(path):
+def parse_config_yaml(path: str) -> Dict[str, Any]:
     with open(path) as file:
         return yaml.load(file, Loader=yaml.FullLoader)
 
 
-def get_influx_configuration(configuration):
+def get_influx_configuration(
+    configuration: Dict[str, Any]
+) -> Optional[Dict[str, Any]]:
     influx_confguration = configuration.get("influx", {})
 
     influx_host = os.getenv(ENV_VARIBLE_INFLUXDB_HOST)
