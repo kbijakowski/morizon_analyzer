@@ -45,7 +45,10 @@ class Result:
         return result
 
     @property
-    def influxdb_measurement_average_price(self) -> Dict[str, Any]:
+    def influxdb_measurement_average_price(self) -> Optional[Dict[str, Any]]:
+        if not self.average_price:
+            return None
+
         return {
             "measurement": self.offer_type,
             "field_name": "average_price",
@@ -56,7 +59,10 @@ class Result:
     @property
     def influxdb_measurement_average_price_per_squared_meter(
         self
-    ) -> Dict[str, Any]:
+    ) -> Optional[Dict[str, Any]]:
+        if not self.average_price_per_squared_meter:
+            return None
+
         return {
             "measurement": self.offer_type,
             "field_name": "average_price_per_squared_meter",
@@ -65,7 +71,10 @@ class Result:
         }
 
     @property
-    def influxdb_measurement_offers_amount(self) -> Dict[str, Any]:
+    def influxdb_measurement_offers_amount(self) -> Optional[Dict[str, Any]]:
+        if not self.offers_amount:
+            return None
+
         return {
             "measurement": self.offer_type,
             "field_name": "offers_amount",
@@ -192,7 +201,7 @@ class Morizon:
 
     def _parse_links(self, links: List[str]) -> Tuple[int, int]:
         if len(links) == 0:
-            return (0, 0)
+            return (None, None)
 
         for link in links:
             text = link.text
@@ -210,7 +219,9 @@ class Morizon:
         self,
         listing_header_description: str
     ) -> int:
-        assert listing_header_description
+        if not listing_header_description:
+            return 0
+
         listing_header_description_p_tag = listing_header_description.pop()
 
         result = listing_header_description_p_tag.text.split(

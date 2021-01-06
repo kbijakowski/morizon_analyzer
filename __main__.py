@@ -110,12 +110,17 @@ if __name__ == "__main__":
     else:
         LOGGER.info("\n\nPublishing results")
         for result in results:
-            influx_publisher.publish(
-                **result.influxdb_measurement_average_price
-            )
-            influx_publisher.publish(
-                **result.influxdb_measurement_average_price_per_squared_meter
-            )
-            influx_publisher.publish(
-                **result.influxdb_measurement_offers_amount
-            )
+            if result.influxdb_measurement_average_price:
+                influx_publisher.publish(
+                    **result.influxdb_measurement_average_price
+                )
+
+            if result.influxdb_measurement_average_price_per_squared_meter:
+                influx_publisher.publish(
+                    **result.influxdb_measurement_average_price_per_squared_meter  # noqa: E501
+                )
+
+            if result.influxdb_measurement_offers_amount:
+                influx_publisher.publish(
+                    **result.influxdb_measurement_offers_amount
+                )
