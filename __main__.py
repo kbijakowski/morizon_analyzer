@@ -1,13 +1,14 @@
+import datetime
 import json
 import logging
 import os
 import sys
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 import yaml
 
 from influx import InfluxDBPublisher
-from morizon import Morizon
+from morizon import Query
 
 formatter = logging.Formatter(
     "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -26,6 +27,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 DEFAULT_CONFIG_FILE_PATH = "config.yaml"
+REPORTS_DIRECTORY = "reports"
 ENV_VARIBLE_CONFIG_FILE_PATH = "MORIZON_ANALYZER_CONFIG_PATH"
 ENV_VARIBLE_INFLUXDB_HOST = "INFLUXDB_HOST"
 ENV_VARIBLE_INFLUXDB_PORT = "INFLUXDB_PORT"
@@ -78,25 +80,21 @@ def get_influx_configuration(
     return influx_confguration
 
 
-if __name__ == "__main__":
-    config_file_path = get_config_file_path()
-    LOGGER.info(
-        "Morizon analyzer configuration file path: {config_file_path}"
-    )
+def prepare_queries(
+    configuration: Dict[str, Any],
+    query_type: str
+) -> List[Query]:
+    return [
+        Query(**item)
+        for item in configuration.get("queries", {}).get(query_type, [])
+    ]
 
-    configuration = parse_config_yaml(config_file_path)
-    LOGGER.info(
-        "Morizon analyzer configuration: \n"
-        f"{json.dumps(configuration, indent=2)}\n"
-    )
 
-    influx_configuration = get_influx_configuration(configuration)
-    influx_publisher = InfluxDBPublisher(**influx_configuration) \
-        if influx_configuration \
-        else None
-
-    queries = [Morizon(**item) for item in configuration["queries"]]
-    results = list(map(lambda query: query.read(), queries))
+def process_analytics_queries(
+    queries: List[Query],
+    influx_publisher: Optional[InfluxDBPublisher] = None
+) -> None:
+    results = list(map(lambda query: query.read_for_analytics(), queries))
 
     LOGGER.info("\n\nResults:")
     for result in results:
@@ -124,3 +122,64 @@ if __name__ == "__main__":
                 influx_publisher.publish(
                     **result.influxdb_measurement_offers_amount
                 )
+
+
+def process_reporting_queries(queries: List[Query]) -> None:
+    timestamp = datetime.datetime.now()
+    counter = 1
+    reporting_results_html = "<h1>Report " \
+        f"{timestamp.day:02d}.{timestamp.month:02d}.{timestamp.year} " \
+        f"({timestamp.hour:02d}:{timestamp.minute:02d})</h1>" \
+
+    for query in queries:
+        reporting_results_html += query.to_html()
+        reporting_results = query.read_for_reporting()
+
+        for reporting_result in reporting_results:
+            reporting_results_html += reporting_result.to_html(counter)
+            counter += 1
+
+        reporting_results_html += "<hr/>"
+
+    write_report(timestamp, reporting_results_html)
+
+
+def write_report(timestamp: datetime.datetime, content: str) -> None:
+    file_name = f"{REPORTS_DIRECTORY}/report__{timestamp.year}_" \
+        f"{timestamp.month:02d}_{timestamp.day:02d}__" \
+        f"{timestamp.hour:02d}_{timestamp.minute:02d}.html" \
+
+    with open(file_name, "w+") as _file:
+        _file.write(content)
+
+
+if __name__ == "__main__":
+    config_file_path = get_config_file_path()
+    LOGGER.info(
+        "Morizon analyzer configuration file path: {config_file_path}"
+    )
+
+    configuration = parse_config_yaml(config_file_path)
+    LOGGER.info(
+        "Morizon analyzer configuration: \n"
+        f"{json.dumps(configuration, indent=2)}\n"
+    )
+
+    influx_configuration = get_influx_configuration(configuration)
+    influx_publisher = InfluxDBPublisher(**influx_configuration) \
+        if influx_configuration \
+        else None
+
+    LOGGER.info("Processing analytics queries")
+    analytics_queries = prepare_queries(configuration, "analytics")
+    LOGGER.info(
+        f"There are {len(analytics_queries)} analytics queries defined"
+    )
+    process_analytics_queries(analytics_queries, influx_publisher)
+
+    LOGGER.info("Processing reporting queries ...")
+    reporting_queries = prepare_queries(configuration, "reporting")
+    LOGGER.info(
+        f"There are {len(reporting_queries)} reporting queries defined"
+    )
+    process_reporting_queries(reporting_queries)

@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 LOGGER = logging.getLogger(__name__)
 
 
-class Result:
+class AnalyticsResult:
 
     def __init__(
         self,
@@ -83,7 +83,28 @@ class Result:
         }
 
 
-class Morizon:
+class ReportingResult:
+
+    def __init__(self, url: str, title: str, price: str):
+        self.url = url
+        self.title = title.strip().replace("\xa0", "").replace("\xa0", "")
+        self.price = price
+
+    def dump(self) -> str:
+        return f"{self.title} ({self.price} zł)\n{self.url}"  # noqa: E501
+
+    def to_html(self, number_in_order: Optional[int] = None) -> str:
+        number_in_order_str = f"{str(number_in_order)}. " or ""
+
+        return f"""
+        <h4>{number_in_order_str}{self.title}</h4>
+        <p>{self.price} zł</p>
+        <a href="{self.url}">{self.url}</a>
+        <br/><br/>
+        """
+
+
+class Query:
 
     TEXT_AVERAGE_PRICE = "średnia cena"
     TEXT_LISTING_HEADER_DESCRIPTION_BEGINING = "Znaleziono"
@@ -112,6 +133,7 @@ class Morizon:
         filter_number_of_rooms_from: Optional[int] = None,
         filter_floor_from: Optional[int] = None,
         filter_price_from: Optional[float] = None,
+        filter_price_to: Optional[float] = None,
         filter_dict_building_type: Optional[int] = None,
         filter_date_filter: Optional[int] = None,
         filter_with_price: Optional[int] = None,
@@ -122,6 +144,7 @@ class Morizon:
         :param `filter_number_of_rooms_from`:  number of rooms (lower boundary)
         :param `filter_floor_from`: floor (lower boundary)
         :param `filter_price_from`: total price in zł (lower boundary)
+        :param `filter_price_to`: total price in zł (higher boundary)
         :param `filter_dict_building_type`: building type (247 - `kamienica`)
         :param `filter_date_filter`: number of days from offer publication
         (allowed values: 1, 3, 7, 30, 90, 180)
@@ -134,6 +157,7 @@ class Morizon:
 
         self.all_filters = {
             "price_from": filter_price_from,
+            "price_to": filter_price_to,
             "living_area_from": filter_living_area_from,
             "number_of_rooms_from": filter_number_of_rooms_from,
             "floor_from": filter_floor_from,
@@ -160,11 +184,28 @@ class Morizon:
 
         return f"{self.main_url}/{self.offer_type}/{self.city}{district}/?{filters_rendered}"  # noqa: E501
 
-    def read(self) -> Result:
+    def to_html(self) -> str:
+        filters_dump = "".join(
+            [
+                f"<li>{filter_name}: {filter_value}</li>\n"
+                for filter_name, filter_value in self.all_filters.items()
+                if filter_value
+            ]
+        )
+
+        return f"""
+        <h2>{self.city} {self.district}</h2>
+        <ul>
+        <li>{self.offer_type}</li>
+        {filters_dump}
+        </ul>
+        """
+
+    def read_for_analytics(self) -> AnalyticsResult:
         markup = BeautifulSoup(self._get_webpage_content(), "html.parser")
 
         links = markup.find_all("a", {"id": "locationPageLink"})
-        average_price, average_price_per_squared_meter = self._parse_links(
+        average_price, average_price_per_squared_meter = self._parse_location_page_links(  # noqa: E501
             links
         )
 
@@ -175,7 +216,7 @@ class Morizon:
             listing_header_description
         )
 
-        return Result(
+        return AnalyticsResult(
             self.city,
             self.district,
             self.offer_type,
@@ -184,6 +225,12 @@ class Morizon:
             average_price_per_squared_meter,
             offers_amount,
         )
+
+    def read_for_reporting(self) -> List[ReportingResult]:
+        markup = BeautifulSoup(self._get_webpage_content(), "html.parser")
+        links = markup.find_all("a", {"class": "property-url"})
+
+        return self._parse_property_url_links(links)
 
     def _get_webpage_content(self) -> Optional[str]:
         LOGGER.debug(f"GET {self.url}")
@@ -199,7 +246,21 @@ class Morizon:
 
         return response.content
 
-    def _parse_links(self, links: List[str]) -> Tuple[int, int]:
+    def _parse_property_url_links(self, links: List) -> List[ReportingResult]:
+        result = []
+
+        for link in links:
+            result.append(
+                ReportingResult(
+                    url=link["href"],
+                    title=link.find("h2", {"class": "single-result__title"}).get_text(),  # noqa: E501
+                    price=link.find("meta", {"itemprop": "price"})["content"],
+                )
+            )
+
+        return result
+
+    def _parse_location_page_links(self, links: List[str]) -> Tuple[int, int]:
         if len(links) == 0:
             return (None, None)
 

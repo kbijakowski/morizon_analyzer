@@ -247,5 +247,4 @@ dmypy.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm
 
-_influx_data
-_morizon_analyzer_logs
+*.html
