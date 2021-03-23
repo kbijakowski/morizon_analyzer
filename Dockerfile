@@ -1,6 +1,6 @@
 FROM python:3.7-alpine
 
-COPY . /
+COPY . /morizon_analyzer
+WORKDIR /morizon_analyzer
 RUN pip install -r requirements.txt
-RUN mkdir -p /root/morizon_analyzer
 ENTRYPOINT ["python", "."]
