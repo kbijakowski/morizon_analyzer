@@ -27,7 +27,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 DEFAULT_CONFIG_FILE_PATH = "config.yaml"
-REPORTS_DIRECTORY = "reports"
+REPORTS_DIRECTORY = "data/reports"
 ENV_VARIBLE_CONFIG_FILE_PATH = "MORIZON_ANALYZER_CONFIG_PATH"
 ENV_VARIBLE_INFLUXDB_HOST = "INFLUXDB_HOST"
 ENV_VARIBLE_INFLUXDB_PORT = "INFLUXDB_PORT"
@@ -127,7 +127,8 @@ def process_analytics_queries(
 def process_reporting_queries(queries: List[Query]) -> None:
     timestamp = datetime.datetime.now()
     counter = 1
-    reporting_results_html = "<h1>Report " \
+    reporting_results_html = "<html>" \
+        "<head><meta charset=\"utf-8\"></head><body><h1>Report " \
         f"{timestamp.day:02d}.{timestamp.month:02d}.{timestamp.year} " \
         f"({timestamp.hour:02d}:{timestamp.minute:02d})</h1>" \
 
@@ -141,6 +142,7 @@ def process_reporting_queries(queries: List[Query]) -> None:
 
         reporting_results_html += "<hr/>"
 
+    reporting_results_html += "</body></html>"
     write_report(timestamp, reporting_results_html)
 
 

@@ -1,3 +1,5 @@
+
+
 # Morizon analyzer
 
 A docker enabled tool dedicated to tracking offers of real estates published in morizon.pl
@@ -7,10 +9,11 @@ A docker enabled tool dedicated to tracking offers of real estates published in 
 The implementation supports 2 main features:
 
 1) Long-term tracking and trend setting of:
-* average price
-* average price per squared meter
-* number of offers
-for real estates matchin given criteria.
+    * average price
+    * average price per squared meter
+    * number of offers
+
+    for real estates matchin given criteria.
 
 2) Daily reports generartion (webpage with offer names, prices and links to details in morizon.pl)
 
@@ -23,38 +26,95 @@ To gather and process results in a convenient way 2 additional docker containers
 * InfluxDB (to store results)
 * Grafana (to visualize results)
 
+## Prerequisites
+
+* Docker (tested with 20.10.5 version)
+* Docker compose (tested with 1.28.6 version)
+
 ## Run
 
-1) Adjust config file and environmental variables
+1) Adjust config file
+
+    Make changes to `config.yaml` file to select thing which you would like to track.
+    File structure is:
+
+    * `influx` - section containing credentials used to connect to InfluxDB (these may be overridden also using environmental variables: `INFLUXDB_HOST`, `INFLUXDB_PORT`, `INFLUXDB_DB`)
+    * `queries` - description about what to fetch - consists of two main sections:
+        * `analytics` - list of dictionaries containing criteria about Morizon offers for which prices will be tracked. Supported keys are:
+            * `city` - name of the city
+            * `district` - name of the district
+            * `filter_price_from` - lower boundary for price - values:
+                * 244 - *apartamentowiec*
+                * 245 - *blok*
+                * 246 - *dom wielorodzinny*
+                * 247 - *kamienica*
+            * `filter_price_to` - upper boundary for price
+            * `filter_dict_building_type` - type of the building
+            * `filter_living_area_from` - lower boundary for living area (in squared meters)
+            * `filter_number_of_rooms_from` - lower boundary for number of rooms
+            * `filter_date_filter` - period of time from offer publication (in days) - Morizon standard values: *1*, *3*, *7*, *30*, *90*, *180*
+            * `filter_floor_from` - lower boundary for floor number
+            * `filter_with_price` - it trye include select offers with price only
+        * `reporting` - list of dictionaries containing criteria about Morizon offers for which reports will be generated. The same format like for *analytics*.
+
+
+2) Create all containers using docker compose (also Morizon Analyzer image will be built)
+
+    ```
+        docker-compose up
+    ```
+
+
+3) Configure periodic run of Morizon Analyzer to enable dayli data gathering
+
+    open:
+
+    ```
+        crontab -e
+    ```
+    
+    and type in:
+
+    ```
+        50 23 * * * docker run --network morizon_analyzer_network --rm -e INFLUXDB_HOST="192.168.254.2" -v $PWD/data/reports:/morizon_analyzer/data/reports morizon_analyzer
+
+    ```
+
+    than save and close editor.
+    Morizon Analyzer docker container will be run each 23:50 day to collect information about prices and generate daily report.
+
+
+## Check running service
+
+By running:
 
 ```
-TODO
+    docker ps
 ```
 
-2) Build docker image
+you should see 3 containers running:
 
 ```
-TODO
+dd874a08f3a2        httpd:2.4                   "httpd-foreground"       6 days ago          Up 3 days           0.0.0.0:3001->80/tcp       morizon_analyzer_reports_server
+ab3310258880        grafana/grafana:latest      "/run.sh"                6 days ago          Up 29 hours         0.0.0.0:3000->3000/tcp     morizon_analyzer_grafana
+328a4c84f665        influxdb:1.8.3              "/entrypoint.sh infl…"   6 days ago          Up 3 days           127.0.0.1:8086->8086/tcp   morizon_analyzer_influx
 ```
 
-3) Run InfluxDB container
+(container `morizon_analyzer` will be run only for few seconds to gather data, publish results to InfluxDB and generate report)
+
+Grafana dashboard should be available on:
 
 ```
-TODO
+    127.0.0.1:3000
 ```
 
-4) Run Grafana container
+Reports should be available on:
 
 ```
-TODO
+    127.0.0.1:3001
 ```
 
-5) Schedule Morizon analyzer run
 
-```
-TODO
-```
-
-## Processing results
+## Configure Grafana
 
 TODO

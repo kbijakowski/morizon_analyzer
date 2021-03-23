@@ -1,0 +1,65 @@
+version: "3.8"
+services:
+  influx:
+    container_name: morizon_analyzer_influx
+    image: influxdb:1.8.3
+    environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=Serious@dmin333
+      - INFLUXDB_USER=influx_user
+      - INFLUXDB_USER_PASSWORD=Str@ngeYe@r2020 
+    ports:
+      - "127.0.0.1:8086:8086"
+    volumes:
+      - ./data/influx:/var/lib/influxdb
+    networks:
+      morizon_analyzer_network:
+        ipv4_address: 192.168.254.2
+
+  grafana:
+    container_name: morizon_analyzer_grafana
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      morizon_analyzer_network:
+        ipv4_address: 192.168.254.3
+    depends_on:
+      - influx
+
+  morizon_analyzer:
+    container_name: morizon_analyzer
+    image: morizon_analyzer
+    build: .
+    environment:
+      - INFLUXDB_HOST=192.168.254.2
+    volumes:
+      - ./data/reports:/morizon_analyzer/data/reports
+    networks:
+      morizon_analyzer_network:
+        ipv4_address: 192.168.254.4
+    depends_on:
+      - influx
+
+  reports_server:
+    container_name: morizon_analyzer_reports_server
+    image: httpd:2.4
+    ports:
+      - "3001:80"
+    volumes:
+      - ./data/reports:/usr/local/apache2/htdocs/
+    networks:
+      morizon_analyzer_network:
+        ipv4_address: 192.168.254.5
+    depends_on:
+      - morizon_analyzer
+
+networks:
+  morizon_analyzer_network:
+    driver: bridge
+    name: morizon_analyzer_network
+    ipam:
+     config:
+       - subnet: 192.168.254.0/29
+         gateway: 192.168.254.1
