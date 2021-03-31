@@ -1,0 +1,4403 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Kraków",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Katowice",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "katowice"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Opole",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "opole"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Wrocław",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "wroclaw"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Poznań",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "poznan"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Zielona Góra",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "zielona-gora"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gorzów Wielkopolski",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gorzow-wielkopolski"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Szczecin",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "szczecin"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gdańsk",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gdansk"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Bydgoszcz",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "bydgoszcz"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Toruń",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "torun"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Łódź",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "lodz"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Warszawa",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "M",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "warszawa"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Olsztyn",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "N",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "olsztyn"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Białystok",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "O",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "bialystok"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Lublin",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "P",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "lublin"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Rzeszów",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "R",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "rzeszow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Kielce",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "S",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "kielce"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gdynia",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "T",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gdynia"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gliwice",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "U",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gliwice"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Wolbrom",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "W",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "wolbrom"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Olkusz",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "X",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "olkusz"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Miechów",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "Y",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "miechow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Polska - liczba ofert",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:280",
+          "decimals": 3,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:281",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Kraków",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Katowice",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "katowice"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Opole",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "opole"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Wrocław",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "wroclaw"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Poznań",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "poznan"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Zielona Góra",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "zielona-gora"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gorzów Wielkopolski",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gorzow-wielkopolski"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Szczecin",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "szczecin"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gdańsk",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gdansk"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Bydgoszcz",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "bydgoszcz"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Toruń",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "torun"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Łódź",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "lodz"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Warszawa",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "M",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "warszawa"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Olsztyn",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "N",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "olsztyn"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Białystok",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "O",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "bialystok"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Lublin",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "P",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "lublin"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Rzeszów",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "R",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "rzeszow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Kielce",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "S",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "kielce"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gdynia",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "T",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gdynia"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Gliwice",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "U",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "gliwice"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Polska - liczba ofert (ostatnie 7 dni)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:280",
+          "decimals": 3,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:281",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 42
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Kraków (kamienica)",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "247"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Bieżanów - Prokocim",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "biezanow-prokocim"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Bronowice",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "bronowice"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Czyżyny",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "czyzyny"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Dębniki",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "debniki"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Grzegórzki",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "grzegorzki"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Krowodrza",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "krowodrza"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Mistrzejowice",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "mistrzejowice"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Nowa Huta",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "nowa-huta"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Podgórze",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "podgorze"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Podgórze Duchackie",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "podgorze-duchackie"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Prądnik Biały",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "M",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "pradnik-bialy"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Prądnik Czerwony",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "N",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "pradnik-czerwony"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Stare Miasto",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "O",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "stare-miasto"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Kraków - liczba ofert",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:280",
+          "decimals": 3,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:281",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 63
+      },
+      "hiddenSeries": false,
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "Kraków (kamienica)",
+          "groupBy": [],
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "247"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Bieżanów - Prokocim",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "biezanow-prokocim"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Bronowice",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "bronowice"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Czyżyny",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "czyzyny"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Dębniki",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "debniki"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Grzegórzki",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "grzegorzki"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Krowodrza",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "krowodrza"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Mistrzejowice",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "mistrzejowice"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Nowa Huta",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "nowa-huta"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Podgórze",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "podgorze"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Podgórze Duchackie",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "podgorze-duchackie"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Prądnik Biały",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "M",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "pradnik-bialy"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Prądnik Czerwony",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "N",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "pradnik-czerwony"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "alias": "Stare Miasto",
+          "groupBy": [],
+          "hide": false,
+          "measurement": "mieszkania",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "O",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "offers_amount"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "city",
+              "operator": "=",
+              "value": "krakow"
+            },
+            {
+              "condition": "AND",
+              "key": "district",
+              "operator": "=",
+              "value": "stare-miasto"
+            },
+            {
+              "condition": "AND",
+              "key": "date_filter",
+              "operator": "=",
+              "value": "7"
+            },
+            {
+              "condition": "AND",
+              "key": "dict_building_type",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "living_area_from",
+              "operator": "=",
+              "value": "null"
+            },
+            {
+              "condition": "AND",
+              "key": "number_of_rooms_from",
+              "operator": "=",
+              "value": "null"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Kraków - liczba ofert (ostatnie 7 dni)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:280",
+          "decimals": 0,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:281",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Mieszkania - liczba ofert",
+  "uid": "HTbyu4igk",
+  "version": 2
+}
