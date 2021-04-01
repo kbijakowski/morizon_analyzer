@@ -142,3 +142,7 @@ Reports should be available on:
    Repeat for the rest of JSON files in *grafana* directory.
 
 4. Enjoy :)
+
+![](https://user-images.githubusercontent.com/20417307/113344354-3e219180-9331-11eb-8756-bd91ad4658cd.png)
+
+![](https://user-images.githubusercontent.com/20417307/113344355-3f52be80-9331-11eb-96e4-ce0ec4839fdb.png)
