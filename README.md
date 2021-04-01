@@ -117,4 +117,28 @@ Reports should be available on:
 
 ## Configure Grafana
 
-TODO
+1. Open Grafana dashboard in browser
+
+   ```
+      127.0.0.1:3000
+   ```
+
+   Login with username: ***admin*** and login: ***admin***.
+   You will be asked about credentials change.
+   Type new password and continue.
+
+2. Configure InfluxDB datasource
+
+   From menu bar on the left side choose *Configuration* option (second button from the bottom) and then *Data source*.
+   Click *Add data source* button on the opened page.
+   Select *InfluxDB*.
+   Type *URL*: ***http://192.168.254.2:8086*** and *Database*: ***db0*** then click *Save & Test* - Grafana will try to contact InfluxDB - 
+   you will be informed about result of this operation.
+
+3. Import dashboards
+
+   From menu bar on the left side choose *Create* option (second button from the top) and then *Import*.
+   In new page click on *Upload JSON file* choose one of JSON files located in *grafana* directory, then click *OK*.
+   Repeat for the rest of JSON files in *grafana* directory.
+
+4. Enjoy :)
