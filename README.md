@@ -54,7 +54,7 @@ To gather and process results in a convenient way 2 additional docker containers
             * `filter_number_of_rooms_from` - lower boundary for number of rooms
             * `filter_date_filter` - period of time from offer publication (in days) - Morizon standard values: *1*, *3*, *7*, *30*, *90*, *180*
             * `filter_floor_from` - lower boundary for floor number
-            * `filter_with_price` - it trye include select offers with price only
+            * `filter_with_price` - it true include select offers with price only
         * `reporting` - list of dictionaries containing criteria about Morizon offers for which reports will be generated. The same format like for *analytics*.
 
 
